@@ -1,21 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
 
-const url = import.meta.env.VITE_SUPABASE_URL;
-const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(url, anonKey);
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error(
+    'Supabase environment variables are missing. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY (or SUPABASE_URL and SUPABASE_ANON_KEY) in your deployment environment.'
+  );
+}
 
-export type ProfileData = {
-  name: string;
-  role: string;
-  tagline: string;
-  intro: string;
-  about: string;
-  location: string;
-  email: string;
-  phone: string;
-  github: string;
-  linkedin: string;
-  resume: string;
-  photo_url: string | null;
-};
+export const supabase = createClient(
+  supabaseUrl || 'http://localhost:0',
+  supabaseAnonKey || 'missing-anon-key'
+);
