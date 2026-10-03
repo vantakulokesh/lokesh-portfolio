@@ -83,17 +83,6 @@ export const projects = [
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=500&fit=crop',
   },
   {
-    id: 'p2',
-    name: 'ResuTrack',
-    category: 'Full Stack',
-    description:
-      'A job tracking web application that helps users organize and track job applications. Add applications, track status, store company information, view a tracking dashboard, and search/filter through applications.',
-    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Git'],
-    github: 'https://github.com/lokesh-vantaku/resutrack',
-    demo: 'https://resutrack-demo.netlify.app',
-    image: 'https://images.unsplash.com/photo-1633412802994-5c058f151b66?w=800&h=500&fit=crop',
-  },
-  {
     id: 'p3',
     name: 'Spotify UI Clone',
     category: 'UI/UX',
